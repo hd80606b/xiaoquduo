@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>校趣多打卡</id>
+    <version>1.0.0</version>
+    <authors>校趣多打卡</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="RestSharp" version="106.11.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\康\Documents\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.runtimeconfig.json" target="lib\netcoreapp3.1\校趣多打卡.runtimeconfig.json" />
+    <file src="C:\Users\康\Documents\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.dll" target="lib\netcoreapp3.1\校趣多打卡.dll" />
+  </files>
+</package>

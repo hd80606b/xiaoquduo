@@ -1,0 +1,15 @@
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.exe
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.csprojAssemblyReference.cache
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.AssemblyInfoInputs.cache
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.AssemblyInfo.cs
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.deps.json
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.runtimeconfig.json
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.runtimeconfig.dev.json
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.dll
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\校趣多打卡.pdb
+G:\xiaoquduo\校趣多打卡\校趣多打卡\bin\Debug\netcoreapp3.1\RestSharp.dll
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.csproj.CoreCompileInputs.cache
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.csproj.CopyComplete
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.dll
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.pdb
+G:\xiaoquduo\校趣多打卡\校趣多打卡\obj\Debug\netcoreapp3.1\校趣多打卡.genruntimeconfig.cache
