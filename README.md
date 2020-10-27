@@ -44,5 +44,5 @@
 * cookie有效期可能是7天，也就是说每7天可能需要去换一次
 
 ### 思路/博客
-[博客](https://hd80606b.com)
+[博客](https://hd80606b.com/xiaoquduo/)
 
