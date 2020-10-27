@@ -94,9 +94,17 @@ namespace 校趣多打卡
                     writer.Close();
                 }
                 else
+                if(response.Content.Contains("html"))
                 {
-                    Console.WriteLine(response.Content + "\n打卡失败，请检查cookie是否失效\n");
-                    writer.WriteLine(DateTime.Now + "\0"+ list[i] + "打卡失败，请检查cookie是否失效\n");
+                    Console.WriteLine(response.Content + "\n打卡失败，请检查cookie是否出错\n");
+                    writer.WriteLine(DateTime.Now + "\0" + list[i] + "打卡失败，请检查cookie是否出错\n");
+                    writer.Flush();
+                    writer.Close();
+                }
+                else
+                {
+                    Console.WriteLine(response.Content + "\n打卡失败\n");
+                    writer.WriteLine(DateTime.Now + "\0"+ list[i] + "打卡失败"+ response.Content);
                     writer.Flush();
                     writer.Close();
                     //Console.WriteLine(list[i]);
