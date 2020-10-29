@@ -91,7 +91,7 @@ namespace 校趣多打卡
                     Console.WriteLine("已成功打卡\n");
                     writer.WriteLine(DateTime.Now + "\0" + list[i] + "已成功打卡\n");
                     writer.Flush();
-                    writer.Close();
+                    
                 }
                 else
                 if(response.Content.Contains("html"))
@@ -99,17 +99,19 @@ namespace 校趣多打卡
                     Console.WriteLine(response.Content + "\n打卡失败，请检查cookie是否出错\n");
                     writer.WriteLine(DateTime.Now + "\0" + list[i] + "打卡失败，请检查cookie是否出错\n");
                     writer.Flush();
-                    writer.Close();
+                   
                 }
                 else
                 {
                     Console.WriteLine(response.Content + "\n打卡失败\n");
                     writer.WriteLine(DateTime.Now + "\0"+ list[i] + "打卡失败"+ response.Content);
                     writer.Flush();
-                    writer.Close();
+                    
                     //Console.WriteLine(list[i]);
                 }
+                
             }
+            writer.Close();
             Thread.Sleep(3000);
         }
     }
