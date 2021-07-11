@@ -30,7 +30,7 @@ namespace 校趣多打卡
                 fs.Flush();
                 fs.Close();
                 newIniFile = new IniFile(appDataDic);
-                newIniFile.WriteContentValue("test", "Cookie", "JSESSIONID=XXXXXXXXXXXXXXX");
+                newIniFile.WriteContentValue("test", "openId", "应该是由96个字母或数字组成");
                 newIniFile.WriteContentValue("test", "CheckPlace", "宇宙-银河系-地球");
                 newIniFile.WriteContentValue("test", "Temperature", "36.5");
                 newIniFile.WriteContentValue("test", "Phone", "XXXXXXXXXXX");
@@ -39,7 +39,7 @@ namespace 校趣多打卡
                 newIniFile.WriteContentValue("test", "checkPlaceProvince", "宇宙");
                 newIniFile.WriteContentValue("test", "checkPlaceCity", "银河系");
                 newIniFile.WriteContentValue("test", "checkPlaceArea", "地球");
-                newIniFile.WriteContentValue("1", "Cookie", "JSESSIONID=");
+                newIniFile.WriteContentValue("1", "openId", "");
                 newIniFile.WriteContentValue("1", "CheckPlace", "");
                 newIniFile.WriteContentValue("1", "Temperature", "36.4");
                 newIniFile.WriteContentValue("1", "Phone", "");
@@ -54,10 +54,20 @@ namespace 校趣多打卡
             List<string> list = IniFile.ReadSections(appDataDic);
             for (int i=1;i<list.Count;i++)
             {
+
+                HttpWebRequest getcookie = (HttpWebRequest)WebRequest.Create("https://mps.zocedu.com/corona/submitHealthCheck?openId=" + newIniFile.ReadContentValue(list[i], "openId") + "&latitude=&longitude=");
+                getcookie.Method = "GET";
+                getcookie.AllowAutoRedirect = false;
+                HttpWebResponse reponse = (HttpWebResponse)getcookie.GetResponse();
+                string cookie = reponse.GetResponseHeader("Set-Cookie");
+                string chuli1 = System.Text.RegularExpressions.Regex.Match(cookie, @"J.*?;").ToString();
+                cookie = chuli1.Replace(";", "");
+            //Console.WriteLine(cookie);
+
                 var client = new RestClient("https://mps.zocedu.com/corona/submitHealthCheck/submit");
                 client.Timeout = -1;
                 var request = new RestRequest(Method.POST);
-                request.AddHeader("Cookie", newIniFile.ReadContentValue(list[i], "Cookie"));
+                request.AddHeader("Cookie", cookie);
                 request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.AddParameter("checkPlace", newIniFile.ReadContentValue(list[i], "CheckPlace"));
                 request.AddParameter("contactMethod", newIniFile.ReadContentValue(list[i], "Phone"));
@@ -91,25 +101,25 @@ namespace 校趣多打卡
                     Console.WriteLine("已成功打卡\n");
                     writer.WriteLine(DateTime.Now + "\0" + list[i] + "已成功打卡\n");
                     writer.Flush();
-                    
+
                 }
                 else
-                if(response.Content.Contains("html"))
+                if (response.Content.Contains("html"))
                 {
                     Console.WriteLine(response.Content + "\n打卡失败，请检查cookie是否出错\n");
                     writer.WriteLine(DateTime.Now + "\0" + list[i] + "打卡失败，请检查cookie是否出错\n");
                     writer.Flush();
-                   
+
                 }
                 else
                 {
                     Console.WriteLine(response.Content + "\n打卡失败\n");
-                    writer.WriteLine(DateTime.Now + "\0"+ list[i] + "打卡失败"+ response.Content);
+                    writer.WriteLine(DateTime.Now + "\0" + list[i] + "打卡失败" + response.Content);
                     writer.Flush();
-                    
+
                     //Console.WriteLine(list[i]);
                 }
-                
+
             }
             writer.Close();
             Thread.Sleep(3000);
