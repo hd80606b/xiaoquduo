@@ -57,7 +57,7 @@
 
 ### 思路/博客/其他
 * python版本请参看[python](https://github.com/FengZzhi/xiaoquduo)
-[博客](https://hd80606b.com/xiaoquduo/)<br />
+* 思路等见[博客](https://hd80606b.com/xiaoquduo/)<br />
 **如果你觉得可以的话，给个Star吧**
 
 ### 关于openid
