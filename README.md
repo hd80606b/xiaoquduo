@@ -13,7 +13,7 @@
     2. 用记事本修改压缩包解压后文件夹里的**数据.ini文件**<br />
     3. 运行校趣多打卡.exe<br />
     
-* 查找cookie
+* 查找openid
     1. 打开电脑微信，进小程序前打开Fiddler2<br />
     2. Fiddler2有显示抓到包的数据后，打开校趣多<br />
     3. 依次点击 疫情防控-健康打卡<br />
@@ -41,7 +41,7 @@
 
 * 程序在运行成功后3s自动关闭，是否成功如没看到可以去查看生成的log文件，这么做是为了方便丢到windows自带的计划任务里做到每日循环，怎么做？请百度windows计划任务<br />
 * 多账户的节点名称可以随意命名，本质是集合遍历
-* **感谢[FengZzhi](https://github.com/FengZzhi)在issues里的建议，改用openid（后面会说明）后成功实现每日全自动打卡**
+* **感谢[FengZzhi](https://github.com/FengZzhi)在issues里的建议，改用openid（后面会说明）后解决了cookie会失效的问题**
 * 填写计划任务时请注意 起始于 务必填写到 校趣多打卡.exe 的更目录（如图）
 ![计划任务](https://www.z4a.net/images/2020/10/27/2020-10-27_21-16-52.png)
 
